@@ -119,5 +119,5 @@ with `dxc.h`.
 
 #pragma comment(lib, "third_party/dxc/dxcompiler.lib")
 ```
-Examples can be found in `code/samples/samples_main.c` and
-`code/samples/samples_main.cpp`.
+Examples can be found in `code/samples/samples_reflection_main.c` and
+`code/samples/samples_reflection_main.cpp`.
