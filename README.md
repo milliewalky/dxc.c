@@ -97,7 +97,7 @@ also exist:
 - `local`: Local files, used for local build configuration input files.
   At this very moment, this directory is completetly obsolete.
 
-### Example usage
+## Example usage
 
 ```c
 IDxcUtils *utils = 0;
@@ -123,13 +123,27 @@ LPCWSTR args[] =
  L"2021",
 };
 IDxcCompilerArgs *compiler_args = 0;
-IDxcUtils_BuildArguments(utils, "shader.hlsl", "CS_EntryPoint", "cs_6_5", args, _countof(args), 0, 0, &compiler_args);
+IDxcUtils_BuildArguments(utils,
+                         "shader.hlsl",
+                         "CS_EntryPoint",
+                         "cs_6_5",
+                         args,
+                         _countof(args),
+                         0,
+                         0,
+                         &compiler_args);
 
 IDxcResult *result = 0;
-IDxcCompiler3_Compile(compiler, &src, IDxcCompilerArgs_GetArguments(compiler_args), IDxcCompilerArgs_GetCount(compiler_args), include_handler, &IID_IDxcResult, &result);
+IDxcCompiler3_Compile(compiler,
+                      &src,
+                      IDxcCompilerArgs_GetArguments(compiler_args),
+                      IDxcCompilerArgs_GetCount(compiler_args),
+                      include_handler,
+                      &IID_IDxcResult,
+                      &result);
 ```
 
-### C && C++ integration
+## C && C++ integration
 
 To use this library in any C && C++ codebase, simply include `dxc.h` and link
 your program against `dxcompiler.lib`. `dxcompiler.lib` is bundled together
@@ -145,6 +159,12 @@ with `dxc.h`.
 
 #define COBJMACROS // NOTE(mwalky): Optional, but convinient
 #include "dxc/dxc.h"
+
+int
+main(void)
+{
+ return 0;
+}
 
 ```
 Examples can be found in `code/samples/samples_reflection_main.c` and
